@@ -146,6 +146,9 @@
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|X64'">
     <Midl>
@@ -238,6 +241,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="mdi.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Desktop\ToJoe\C++HighDefMdiChild.JPG" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

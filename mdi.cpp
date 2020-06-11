@@ -46,6 +46,9 @@ CMdiApp NEAR theApp;
 
 BOOL CMdiApp::InitInstance()
 {
+	// Set High DPI Awareness
+	SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
+
 	// create main MDI Frame window
 	CMainFrame* pMainFrame = new CMainFrame;
 	if (!pMainFrame->LoadFrame(IDR_MAINFRAME))
