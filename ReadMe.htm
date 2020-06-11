@@ -1,4 +1,13 @@
 This project was cloned from 
 https://github.com/microsoft/VCSamples/tree/master/VC2010Samples/MFC/general/mdi
 
+To show this bug I had to enable DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2. I did this by
+1) Set DPI Awareness to None in project "Properties | Configuration Properties | Manifest Tool Input and Output | DPI Awareness"
+2) Added this code to mdi.cpp:  SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
 
+To see the bug:
+1) Set display to 100%
+2) Run the app and display a Child MDI using "File|New Bounce" or "File|New Hello"
+3) Maximize the child window
+4) Leave the app running and change the display to a GREATER value: If step 1 was 100% then set to 175% or greater
+5) The maximized MDI child window no longer fills the MDI parent accurately.
